@@ -1,0 +1,161 @@
+@import '__placeholders.scss'
+@import '__mixins.scss'
+    
+    
+    
+*
+    transition:  .2s all ease-in-out
+    
+body
+    background-color: whitesmoke
+
+.section6,
+    .place
+        @extend %place 
+
+// for pipe 
+.pipe
+    font-weight: bold
+    color: #112d60
+    text-decoration: underline
+    font-size: 2rem
+    margin-top: 100px !important
+    margin-bottom: 100px 
+
+
+.section3,
+.section6
+    .place2, .place3
+        @include gridTemplate(grid, repeat(2, 1fr), 10px)
+        @media screen and (max-width: 500px)
+            grid-template-columns: 1fr
+            grid-gap: 10px
+
+        .place
+            @extend  %place
+
+    .place3
+        grid-row-gap: 10px
+        @extend  %place
+        .place
+            height: auto !important
+            
+
+.section1, 
+.section2,
+.section3,
+.section4,
+.section5
+    .wrap
+        display: grid
+        grid-template-columns: repeat(2, 1fr)
+        grid-column-gap: 20px
+
+        @media screen and ( max-width: 900px )
+            grid-template-columns:  1fr !important
+            grid-row-gap: 10px !important
+            text-align: center
+
+
+        .block
+            .place
+                width: 100%
+                height: 200px
+                @media screen and ( max-width: 900px )
+                    min-width:  100%
+
+            
+
+            p.content
+                font-size: .7rem
+                
+                    
+
+            .ctn.img
+                height: 200px
+                width: 200px
+                
+
+            .ctn
+                overflow: hidden
+
+                &:hover
+                    img
+                        transform: scale(1.2)
+                img
+                    transform: scale(1.1)
+                    
+                   
+
+                h3
+                    font-weight: bolder
+
+                p.content
+                    font-size: .7rem
+
+            
+                .btn
+                    font-size: .5rem
+                    background-color: #112d60
+                    border: none
+                    
+                    &:hover
+                        background-color: rgb(4, 24, 61)
+                    @media screen and ( max-width: 900px )
+                        min-width:  100%
+                        font-size: 1rem
+                        margin-bottom: 30px
+
+.section5
+    // background-color: red
+    @media screen and ( max-width: 500px )
+        .row
+            &:first-child
+                .imgCarry
+                    justify-content: center
+                
+                        
+.section6
+    
+    .wrap
+        .col-md-6
+            h4
+                font-weight: bolder
+                border-left: 5px solid 
+                padding-left: 10px
+
+            p.content
+                font-size: .7rem
+        
+            .btn
+                font-size: .6rem
+                background-color: #112d60
+                border: none
+                border-radius: 0
+                padding: .5rem 2rem
+                margin-bottom: 5px 
+                
+                &:hover
+                    background-color: rgb(4, 24, 61)
+
+.section7
+    .wrap
+        .place
+            @extend %place
+
+        text-align: center
+        @include gridTemplate(grid, repeat(3, 1fr), 30px) 
+
+        @media screen and (max-width: 500px)
+            @include gridTemplate(grid, 1fr, 0)
+
+            .place
+                margin-bottom: 10px
+            .box
+                margin-bottom: 10px
+            
+        h4
+            font-weight: bolder
+
+        p.content
+            font-size: .7rem
